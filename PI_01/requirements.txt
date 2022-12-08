@@ -1,0 +1,7 @@
+
+# archivo requirements.txt
+fastapi==0.88.0                # Framework web
+uvicorn==0.20.0                 # Servidor 
+pandas==1.5.0
+pydantic==1.10.2               #creo q no lo necesito
+numpy==1.23.3                  #idem
