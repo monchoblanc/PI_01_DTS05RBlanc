@@ -1,8 +1,33 @@
+                                                Individual Project 01, Data Science 05, by Ramon Blanc
 
-                                
-                                Proyecto Individual 01, Data Science 05, por Ramon Blanc
+We are asked to carry out a Data Engineer project, with an ETL process and the implementation of a dockerized FastAPI that can respond to specific GET queries as specified in the instructions.
 
-Se nos pide que realicemos un proyecto de Data Engeneer, con proceso de ETL y realizacion de una FastApi dockerizada, pudiendo esta responder a consultas especificadas en las consignas, de tipo GET. 
+Following, I will describe how I carried out the project.
+
+First, I created the project folder and saved the datasets as where provided in the forked repository. For the sake of simplicity, I chose to perform the ETL process in Python using Pandas, as it seemed easier to Dockerize the application compared to using MySQL or other tools.
+
+Next, I started the ETL process within the 'ETL.ipynb' notebook. I began by importing the Pandas module. At first glance, the datasets had similar characteristics in terms of data types and columns, so after checking these basic things, I proceeded to concatenate all the datasets. To do this, I first differentiated the 'Show_id' field to maintain its uniqueness and also added a column that referenced the original dataset.
+
+Again, for simplicity, I tried to minimize changes, so I did not delete any columns, even though I had identified which ones were useful and which ones were not for the required queries. Since this was my first ETL project beyond the practices in the bootcamp, I preferred to perform transformations "on demand," meaning as they were needed to develop the functions. This ultimately resulted in several transformations being done directly within the function.
+
+As the final general step in the ETL process, I developed the functions within the same notebook. This process can be observed in the notebook, including some minimal modifications and checks to ensure that the results were on the right track (for example, that the number of fields with more than one actor not separated by commas did not represent a large percentage of the total records). Given that the deadline for commiting this project was very soon, I decided that the ETL process was sufficient once the four required functions were working as expected.
+
+I then moved on to the next stage, creating the Docker image, running it, and making queries to the API. I had several failed attempts until finally, after modifying some routes, lines of code, and file arrangements, I achieved the desired outcome.
+
+Once I was confident that my image could run a FastAPI instance locally, I proceeded to incorporate my functions into the main.py file. Additionally, I realized that I needed to convert my concatenated DataFrame back to CSV so that the API could load it upon startup and run the main.py. This did not pose any problems.
+
+After completing all of the above, I tested making queries from the browser, entering different parameters for each one. In all cases, the API's response was satisfactory, so I considered the project objective fulfilled.
+
+I am aware that my data transformation and normalization process could have been more extensive, but I felt that it was sufficient for the scope of the project.
+
+In conclusion, these were days packed with learning and practical application of concepts learned throughout the Bootcamp. 
+                               
+                               
+SPANISH VERSION:                                
+                               
+                               Proyecto Individual 01, Data Science 05, por Ramon Blanc
+
+Se nos pide que realicemos un proyecto de Data Engineer, con proceso de ETL y realizacion de una FastApi dockerizada, pudiendo esta responder a consultas especificadas en las consignas, de tipo GET. 
 
 Paso a describir el proceso llevado a cabo.
 
